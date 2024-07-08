@@ -2,7 +2,8 @@ from django.shortcuts import render, HttpResponse
 from django.shortcuts import render
 from django.db.models import Count
 from .models import Place
-import random
+import random 
+from random import sample
 
 # Create your views here.
 

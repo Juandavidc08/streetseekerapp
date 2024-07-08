@@ -14,6 +14,7 @@
 </ul>
 
 <form method="GET" action="{% url 'search' %}">
+    {% csrf_token %}
     <button type="submit">Generate New Random Searches</button>
 </form>
 
