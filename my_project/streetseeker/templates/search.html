@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Random Searches</h1>
+
+<ul>
+    {% for place in random_places  %}
+    <li>
+        <strong>{{ place.title }}</strong>: {{ place.location }} <br>
+        <img src="{{ place.image.url }}" alt="{{ place.title }}" style="max-width: 200px;"><br>
+        {{ place.description }}
+    </li>
+    {% endfor %}
+</ul>
+
+<form method="GET" action="{% url 'search' %}">
+    <button type="submit">Generate New Random Searches</button>
+</form>
+
+{% endblock %}
