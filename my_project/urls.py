@@ -19,5 +19,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('streetseeker.urls'))
+    path('', include('streetseeker.urls')),
+    # Allow us to use urls than comes within django authentication system
+    path('members/', include('django.contrib.auth.urls')),
+    path('members/', include('members.urls')),
 ]
