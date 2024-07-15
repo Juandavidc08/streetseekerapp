@@ -22,7 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-&-08wac^vl2bw#%)v5jmw&3-qs36^1he1+o2wb84m4pzcu!*gb'
+# SECRET_KEY = 'django-insecure-&-08wac^vl2bw#%)v5jmw&3-qs36^1he1+o2wb84m4pzcu!*gb'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -77,6 +78,19 @@ WSGI_APPLICATION = 'my_project.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+# DATABASE INFO FOR TRYING TO RESOLVE A BUUG
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'envoy_hug_sleep_270144',
+#        'USER': 'u7zoiziad9i',
+#        'PASSWORD': '56K737HYVOqh',
+#        'HOST': 'ep-gentle-mountain-a23bxz6h.eu-central-1.aws.neon.tech',
+#        'PORT': '5432',
+#    }
+#}
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
