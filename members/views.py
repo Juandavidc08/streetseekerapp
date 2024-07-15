@@ -16,30 +16,27 @@ def login_user(request):
             return redirect("home")
         else:
             # Return an 'invalid login' error message.
-            messages.success(request, ("There was an Error Login In, Try again"))
+            messages.error(request, "There was an Error Logging In, Try again")
             return redirect("login")
 
     return render(request, 'authenticate/login.html')
 
 def logout_user(request):
     logout(request)
-     messages.success(request, ("You're Logged Out"))
-     return redirect("home")
+    messages.success(request, "You're Logged Out")
+    return redirect("home")
 
 def register_user(request):
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            username = form.cleaned_data ["username"]
-            password = form.cleaned_data ["password1"]
+            username = form.cleaned_data["username"]
+            password = form.cleaned_data["password1"]
             user = authenticate(username=username, password=password)
             login(request, user)
-            messages.success(request, ("Registration Successful!"))
+            messages.success(request, "Registration Successful!")
             return redirect("home")
     else:
         form = UserCreationForm()
-    return render(request, 'authenticate/register_user.html', {
-        'form':form,
-    })
-    # return render(request, 'authenticate/register_user.html', {} )
+    return render(request, 'authenticate/register_user.html', {'form': form})

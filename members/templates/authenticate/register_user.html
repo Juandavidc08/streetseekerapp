@@ -1,21 +1,23 @@
-{% extends "base.html" %} {% block title %} Home page {% endblock %}
+{% extends "base.html" %}
+{% block title %} Home page {% endblock %}
 {% block content %}
 
 {% if form.errors %}
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
     There was an error in the form...
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+</div>
+{% endif %}
 
-{% endif%}
 <p>Register</p>
 <!-- https://getbootstrap.com/docs/5.3/forms/overview/ -->
 <form action="{% url 'register_user' %}" method="POST">
     {% csrf_token %}
+    
+    {{ form.as_p }}
 
-    {% form.as_p %}
-
-<br/><br/>
+    <br/><br/>
     <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+</form>
+
 {% endblock %}
