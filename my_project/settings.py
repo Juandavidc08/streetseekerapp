@@ -79,17 +79,18 @@ DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
-# DATABASE INFO FOR TRYING TO RESOLVE A BUUG
-# DATABASES = {
+#DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.postgresql',
-#        'NAME': 'envoy_hug_sleep_270144',
+#        'NAME': 'drive_shore_rack_647451',
 #        'USER': 'u7zoiziad9i',
 #        'PASSWORD': '56K737HYVOqh',
 #        'HOST': 'ep-gentle-mountain-a23bxz6h.eu-central-1.aws.neon.tech',
 #        'PORT': '5432',
 #    }
 #}
+
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
