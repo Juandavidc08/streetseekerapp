@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Delete Reservation{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Delete Reservation</h1>
+    <p>Are you sure you want to delete your reservation for {{ reservation.place.title }} on {{ reservation.date_of_visit }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+</div>
+{% endblock %}

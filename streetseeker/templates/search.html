@@ -1,21 +1,23 @@
 {% extends "base.html" %}
 
+{% block title %}Random Searches{% endblock %}
+
 {% block content %}
-<h1>Random Searches</h1>
-
-<ul>
-    {% for place in random_places  %}
-    <li>
-        <strong>{{ place.title }}</strong>: {{ place.location }} <br>
-        <img src="{{ place.image.url }}" alt="{{ place.title }}" style="max-width: 200px;"><br>
-        {{ place.description }}
-    </li>
-    {% endfor %}
-</ul>
-
-<form method="GET" action="{% url 'search' %}">
-    {% csrf_token %}
-    <button type="submit">Generate New Random Searches</button>
-</form>
-
+<div class="container">
+    <h1>Random Searches</h1>
+    <ul>
+        {% for place in random_places %}
+        <li>
+            <strong>{{ place.title }}</strong>: {{ place.location }} <br>
+            <img src="{{ place.image.url }}" alt="{{ place.title }}" style="max-width: 200px;"><br>
+            {{ place.description }}
+            <br><a href="{% url 'book_place' place.id %}">Book</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <form method="GET" action="{% url 'search' %}">
+        {% csrf_token %}
+        <button type="submit">Generate New Random Searches</button>
+    </form>
+</div>
 {% endblock %}
