@@ -11,7 +11,7 @@
         <li>
             <div class="image-container">
                 {% if "placeholder" in place.image.url %}
-                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                    <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
                 {% else %}
                     <img class="card-img-top" src="{{ place.featured_image.url }}" alt="{{ place.title }}">
                 {% endif %}
