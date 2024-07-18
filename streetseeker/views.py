@@ -1,16 +1,15 @@
-from django.shortcuts import render, HttpResponse, get_object_or_404
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 from django.db.models import Count
 from django.contrib.auth.decorators import login_required
-from .models import Place
-import random 
+from .models import Place, Reservation
+from .forms import ReservationForm, CommentForm
+import random
 from random import sample
 
 # Create your views here.
 
 def home(request):
     return render(request, "home.html")
-
 
 def search(request):
     # Get all places from the database

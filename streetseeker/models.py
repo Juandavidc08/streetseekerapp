@@ -16,6 +16,7 @@ class Reservation(models.Model):
     place = models.ForeignKey(Place, on_delete=models.CASCADE)
     date_reserved = models.DateTimeField(auto_now_add=True)
     date_of_visit = models.DateField()
+    time_of_visit = models.TimeField()
 
     def __str__(self):
         return f"{self.user.username} - {self.place.title} on {self.date_of_visit}"
