@@ -7,9 +7,10 @@
     <h1>Add Comment for {{ reservation.place.title }}</h1>
     <form method="post">
         {% csrf_token %}
+        <br>
         {{ form.as_p }}
+        <br>
         <button type="submit">Add Comment</button>
     </form>
 </div>
 {% endblock %}
-∫

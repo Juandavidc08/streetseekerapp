@@ -11,4 +11,5 @@ urlpatterns = [
     path('comment/<int:reservation_id>/', views.add_comment, name='add_comment'),
     path('place/<int:place_id>/comments/', views.view_comments, name='view_comments'),
     path('comment/<int:comment_id>/delete/', views.delete_comment, name='delete_comment'),
+    path('contact/', views.contact, name='contact'),
 ]

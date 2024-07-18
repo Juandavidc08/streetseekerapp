@@ -3,7 +3,7 @@ from django.db.models import Count
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Place, Reservation, Comment
-from .forms import ReservationForm, CommentForm
+from .forms import ReservationForm, CommentForm, ContactForm
 import random
 from random import sample
 
@@ -100,3 +100,19 @@ def delete_comment(request, comment_id):
         messages.error(request, 'You are not authorized to delete this comment.')
     
     return redirect('view_comments', place_id=comment.reservation.place.id)
+
+def contact(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Process the form data
+            name = form.cleaned_data['name']
+            email = form.cleaned_data['email']
+            message = form.cleaned_data['message']
+            
+            # For simplicity, we'll assume printing to console for demonstration
+            print(f"Name: {name}\nEmail: {email}\nMessage: {message}")
+            return render(request, 'thank_you.html')
+    else:
+        form = ContactForm()
+    return render(request, 'contact_form.html', {'form': form})

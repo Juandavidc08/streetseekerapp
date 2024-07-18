@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <h1>Street Seeker Search</h1>
+    <h1>Start Exploring</h1>
     <ul>
         {% for place in random_places %}
         <li>
@@ -18,7 +18,10 @@
     </ul>
     <form method="GET" action="{% url 'search' %}">
         {% csrf_token %}
-        <button type="submit">Generate New Random Searches</button>
+        <button type="submit" class="btn btn-primary btn-lg mt-3">Generate New Plans</button>
     </form>
 </div>
+<br>
+<br>
+<br>
 {% endblock %}
