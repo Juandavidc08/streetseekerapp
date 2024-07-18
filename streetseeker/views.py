@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 from django.db.models import Count
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Place, Reservation, Comment
+from .models import Place, Reservation, Comment, Contact
 from .forms import ReservationForm, CommentForm, ContactForm
 import random
 from random import sample
@@ -110,9 +110,15 @@ def contact(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
             
-            # For simplicity, we'll assume printing to console for demonstration
-            print(f"Name: {name}\nEmail: {email}\nMessage: {message}")
-            return render(request, 'thank_you.html')
+            # Save the contact message to the database
+            contact = Contact(name=name, email=email, message=message)
+            contact.save()
+            
+            # Redirect to thank-you page
+            return redirect('thank_you')
     else:
         form = ContactForm()
+    
     return render(request, 'contact_form.html', {'form': form})
+def thank_you(request):
+    return render(request, 'thank_you.html')
