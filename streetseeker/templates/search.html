@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block title %}Random Searches{% endblock %}
 
@@ -8,8 +9,16 @@
     <ul>
         {% for place in random_places %}
         <li>
+            <div class="image-container">
+                {% if "placeholder" in place.image.url %}
+                    <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+                {% else %}
+                    <img class="card-img-top" src="{{ place.featured_image.url }}" alt="{{ place.title }}">
+                {% endif %}
+                <div class="image-flash">
+                </div>
+            </div>
             <strong>{{ place.title }}</strong>: {{ place.location }} <br>
-            <img src="{{ place.image.url }}" alt="{{ place.title }}" style="max-width: 200px;"><br>
             {{ place.description }}
             <br><a href="{% url 'book_place' place.id %}">Book</a>
             <br><a href="{% url 'view_comments' place.id %}">View Comments</a>
