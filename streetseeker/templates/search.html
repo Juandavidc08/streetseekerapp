@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="container">
-    <h1>∫</h1>
+    <h1>Street Seeker Search</h1>
     <ul>
         {% for place in random_places %}
         <li>
@@ -12,6 +12,7 @@
             <img src="{{ place.image.url }}" alt="{{ place.title }}" style="max-width: 200px;"><br>
             {{ place.description }}
             <br><a href="{% url 'book_place' place.id %}">Book</a>
+            <br><a href="{% url 'view_comments' place.id %}">View Comments</a>
         </li>
         {% endfor %}
     </ul>

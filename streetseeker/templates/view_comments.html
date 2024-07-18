@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Comments for {{ place.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Comments for {{ place.title }}</h1>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <ul>
+        {% for comment in comments %}
+        <li>
+            <strong>{{ comment.user.username }}</strong>: {{ comment.text }} <br>
+            Posted on: {{ comment.created_at }}
+            {% if comment.user == request.user %}
+                <form action="{% url 'delete_comment' comment.id %}" method="POST" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            {% endif %}
+        </li>
+        {% empty %}
+        <li>No comments yet.</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'search' %}">Back to Search</a>
+</div>
+{% endblock %}

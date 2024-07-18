@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse, get_object_or_404, redirect
 from django.db.models import Count
 from django.contrib.auth.decorators import login_required
-from .models import Place, Reservation
+from django.contrib import messages
+from .models import Place, Reservation, Comment
 from .forms import ReservationForm, CommentForm
 import random
 from random import sample
@@ -76,3 +77,26 @@ def add_comment(request, reservation_id):
     else:
         form = CommentForm()
     return render(request, 'add_comment.html', {'form': form, 'reservation': reservation})
+
+def view_comments(request, place_id):
+    place = get_object_or_404(Place, id=place_id)
+    
+    # Get reservations associated with the place
+    reservations = Reservation.objects.filter(place=place)
+    
+    # Filter comments based on reservations
+    comments = Comment.objects.filter(reservation__in=reservations)
+
+    return render(request, 'view_comments.html', {'place': place, 'comments': comments})
+
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    
+    # Check if the user is the owner of the comment
+    if comment.user == request.user:
+        comment.delete()
+        messages.success(request, 'Comment deleted successfully.')
+    else:
+        messages.error(request, 'You are not authorized to delete this comment.')
+    
+    return redirect('view_comments', place_id=comment.reservation.place.id)
