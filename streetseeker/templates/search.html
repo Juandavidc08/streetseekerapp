@@ -1,14 +1,14 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static %} 
 
 {% block title %}Random Searches{% endblock %}
 
 {% block content %}
 <div class="container">
-    <h1>Start Exploring</h1>
-    <ul>
+    <h1 class="searchtitle">Start Exploring</h1>
+    <ul class="search_ul">
         {% for place in random_places %}
-        <li>
+        <li class="search_li">
             <div class="image-container">
                 {% if "placeholder" in place.image.url %}
                     <img class="card-img-top" src="{% static 'images/default.png' %}" alt="placeholder image">
@@ -18,8 +18,11 @@
                 <div class="image-flash">
                 </div>
             </div>
-            <strong>{{ place.title }}</strong>: {{ place.location }} <br>
-            {{ place.description }}
+            <div class="text-content">
+        <strong class="place-title">{{ place.title }}</strong>
+        <p class="place-location">{{ place.location }}</p>
+        <p class="place-description">{{ place.description }}</p>
+    </div>
             <br><a href="{% url 'book_place' place.id %}">Book</a>
             <br><a href="{% url 'view_comments' place.id %}">View Comments</a>
         </li>
@@ -27,7 +30,7 @@
     </ul>
     <form method="GET" action="{% url 'search' %}">
         {% csrf_token %}
-        <button type="submit" class="btn btn-primary btn-lg mt-3">Generate New Plans</button>
+        <button type="submit" class="btn-custom">Generate New Plans</button>
     </form>
 </div>
 <br>

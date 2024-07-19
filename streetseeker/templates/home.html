@@ -1,20 +1,21 @@
 {% extends "base.html" %}
 {% block title %}Your Ultimate Guide to Unforgettable Experiences!{% endblock %}
-
+{% load static %} 
 {% block content %}
+
 <div class="container">
     <div class="mt-5">
-        <h1>STREET SEEKER</h1>
+        <h1 >STREET SEEKER</h1>
         <h2>🌟BARCELONA-SPAIN EDITION🌟</h2>
         <br>
         <br>
         <h3>Your Ultimate Guide to Unforgettable Experiences!</h3>
-        <p>Ever found yourself yearning to surprise your friends or partner with a remarkable evening but unsure where to start? Look no further! We understand the struggle. That's why we've crafted this revolutionary idea tailored just for you.</p>
-        <p><strong>Here's how it works:</strong> we'll conjure 3 choices up so you can see the perfect plan for you. Whether it's a delightful dinner, a vibrant night at a trendy bar, or an offbeat activity that adds that extra spark, we've got you covered. No more pondering over what to do – let us be your guide.</p>
-        <p>Go ahead, click the button, and watch as we unveil the best places around you.</p>
-        <p>Share your thoughts with us. Your feedback helps us fine-tune our suggestions, ensuring that more people can effortlessly elevate their plans.</p>
-        <p>Enjoy life – one click at a time. Because life's too short for mundane decisions. Cheers to making every moment unforgettable! 🌟</p>
-        <a href="{% url 'search' %}" class="btn btn-primary btn-lg mt-3">Start the Search</a>
+        <p class="intro-text">Ever found yourself yearning to surprise your friends or partner with a remarkable evening but unsure where to start? Look no further! We understand the struggle. That's why we've crafted this revolutionary idea tailored just for you.</p>
+        <p class="intro-text"><strong>Here's how it works:</strong> we'll conjure 3 choices up so you can see the perfect plan for you. Whether it's a delightful dinner, a vibrant night at a trendy bar, or an offbeat activity that adds that extra spark, we've got you covered. No more pondering over what to do – let us be your guide.</p>
+        <p class="intro-text">Go ahead, click the button, and watch as we unveil the best places around you.</p>
+        <p class="intro-text">Share your thoughts with us. Your feedback helps us fine-tune our suggestions, ensuring that more people can effortlessly elevate their plans.</p>
+        <p class="intro-text">Enjoy life – one click at a time. Because life's too short for mundane decisions. Cheers to making every moment unforgettable! 🌟</p>
+        <a href="{% url 'search' %}" class="btn-custom">LET'S GO</a>
     </div>
 </div>
 {% endblock %}

@@ -1,0 +1,132 @@
+/* Center the container and ensure it takes full height */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2px; /* Add padding for spacing */
+}
+
+/* Style for the introduction text block */
+.intro-text {
+    max-width: 1000px; /* Adjust the width to fit your design */
+    margin: 0 auto; /* Center the text block */
+    padding: 2px; /* Add padding inside the block */
+    font-size: 1.1rem; /* Adjust the font size for readability */
+    line-height: 1.6; /* Improve line spacing for better readability */
+}
+
+/* Custom button styling */
+.btn-custom {
+    background-color: #f28500; 
+    color: #ffffff; /* White text color */
+    border: 1px solid #000; /* Remove default border */
+    border-radius: 20px;
+    padding: 15px 25px; /* Adjust padding to control the size */
+    font-size: 30px; /* Adjust font size */
+    text-align: center; /* Center text */
+    display: inline-block; /* Align with text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none;
+}
+
+.btn-custom:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-custom:focus, .btn-custom:active {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 0 3px rgba(255, 0, 0, 0.5); /* Add a red focus shadow */
+}
+
+/* Container for each place */
+.image-container {
+    position: relative;
+    width: 100%; /* Ensure it takes the full width available */
+    max-width: 300px; /* Same max width for all containers */
+    height: 200px; /* Fixed height to ensure uniformity */
+    margin: 0; /* Center the container horizontally */
+    overflow: hidden; /* Hide any overflow from images */
+}
+
+/* Style for images inside the container */
+.image-container img {
+    width: 100%; /* Make image responsive */
+    height: 100%; /* Cover the container height */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+    display: block; /* Ensure block display to remove any extra space below image */
+    border: 2px solid #ddd; /* Light border around images */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Style for the list */
+.search_ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow items to wrap onto multiple lines */
+    gap: 20px; /* Space between items */
+    justify-content: center; /* Center items horizontally */
+}
+
+/* Style for each list item */
+.search_li {
+    border: 1px solid #ddd; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding around content */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center text */
+    width: 300px; /* Fixed width for list items */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+/* Style for the headings */
+.searchtitle {
+    text-align: center; /* Center the heading text */
+    margin-bottom: 20px; /* Space below the heading */
+    color: #f28500; /* Set text color */
+    font-size: 2rem; /* Adjust font size for better readability */
+    font-weight: bold; /* Make heading bold */
+}
+
+/* Style for the place title */
+.place-title {
+    font-size: 1.5rem; /* Larger font size for better readability */
+    color: #333; /* Darker color for better contrast */
+}
+
+/* Style for the place location */
+.place-location {
+    font-size: 1.2rem; /* Slightly larger font size */
+    color: #666; /* Medium gray color for contrast */
+    margin: 5px 0; /* Reduce margin to lessen spacing */
+}
+
+/* Style for the place description */
+.place-description {
+    font-size: 1rem; /* Standard font size for readability */
+    color: #444; /* Slightly darker gray for contrast */
+    margin: 5px 0; /* Reduce margin to lessen spacing */
+}
+
+/* Make images fit well on different screen sizes */
+@media (max-width: 768px) {
+    .image-container {
+        max-width: 100%; /* Allow image container to use full width on small screens */
+    }
+    
+    .search_ul {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        gap: 0; /* Remove space between items on small screens */
+    }
+
+    .search_li {
+        width: 100%; /* Make list items full width on small screens */
+    }
+}

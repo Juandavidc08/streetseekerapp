@@ -8,3 +8,5 @@ Any projects built using the old template will continue to work. For all new pro
 
 ---
 Happy coding!
+background
+<a href="https://www.freepik.com/free-vector/gradient-liquid-mobille-wallpaper_4664119.htm#query=app%20background&position=11&from_view=keyword&track=ais_user&uuid=c8c87219-536e-4c9a-bb23-b1a9a64e44a1">Image by coolvector on Freepik</a>
