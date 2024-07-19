@@ -115,6 +115,50 @@
     margin: 5px 0; /* Reduce margin to lessen spacing */
 }
 
+.btn-custom-one{
+    background-color: #f28500; 
+    color: #ffffff; /* White text color */
+    border: 1px solid #000; /* Remove default border */
+    border-radius: 20px;
+    padding: 10px 10px; /* Adjust padding to control the size */
+    font-size: 15px; /* Adjust font size */
+    text-align: center; /* Center text */
+    display: inline-block; /* Align with text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none;
+}
+
+.btn-custom-one:hover {
+    background-color: #cc0000; /* Darker red on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-custom-two{
+    background-color: #9fc0de; 
+    color: #ffffff; /* White text color */
+    border: 1px solid #000; /* Remove default border */
+    border-radius: 20px;
+    padding: 10px 10px; /* Adjust padding to control the size */
+    font-size: 15px; /* Adjust font size */
+    text-align: center; /* Center text */
+    display: inline-block; /* Align with text */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    text-decoration: none;
+}
+
+.btn-custom-two:hover {
+    background-color: #378648; 
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-search {
+    margin: 20px;
+}
+
 /* Make images fit well on different screen sizes */
 @media (max-width: 768px) {
     .image-container {
