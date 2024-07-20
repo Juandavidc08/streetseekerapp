@@ -27,10 +27,13 @@
                     <label for="id_password">Password:</label>
                     <input type="password" id="id_password" name="password" class="form-control" required>
                 </div>
-                <button type="submit" class="btn-custom-one mt-4"> Log In  </button>
+                <button type="submit" class="btn-custom-one btn-four ">Log In</button>
             </form>
             <br>
-            <a href="{% url 'home' %}" class="btn-custom-three">Home</a>
+            <a href="{% url 'register_user' %}" class="btn-custom-one btn-four ">Register</a>
+            <br>
+            <a href="{% url 'home' %}" class="btn-custom-one btn-four">Home</a>
+            
         </div>
     </div>
 </div>

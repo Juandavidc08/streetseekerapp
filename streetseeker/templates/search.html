@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 
 {% block title %}Random Searches{% endblock %}
 
@@ -15,16 +15,23 @@
                 {% else %}
                     <img class="card-img-top" src="{{ place.featured_image.url }}" alt="{{ place.title }}">
                 {% endif %}
-                <div class="image-flash">
-                </div>
+                <div class="image-flash"></div>
             </div>
             <div class="text-content">
-        <strong class="place-title">{{ place.title }}</strong>
-        <p class="place-location">{{ place.location }}</p>
-        <p class="place-description">{{ place.description }}</p>
-    </div>
-            <br><a href="{% url 'book_place' place.id %}" class="btn-custom-one" onclick="showLoginModal()" >Book</a>
-            <br><a href="{% url 'view_comments' place.id %}" class="btn-custom-two">View Comments</a>
+                <strong class="place-title">{{ place.title }}</strong>
+                <p class="place-location">{{ place.location }}</p>
+                <p class="place-description">{{ place.description }}</p>
+            </div>
+            <br>
+            {% if user.is_authenticated %}
+                <!-- Direct link to book the place -->
+                <a href="{% url 'book_place' place.id %}" class="btn-custom-one">Book</a>
+            {% else %}
+                <!-- Button to show the login modal -->
+                <a href="#" class="btn-custom-one" onclick="showLoginModal(); return false;">Book</a>
+            {% endif %}
+            <br>
+            <a href="{% url 'view_comments' place.id %}" class="btn-custom-two">View Comments</a>
         </li>
         {% endfor %}
     </ul>
@@ -33,9 +40,7 @@
         <button type="submit" class="btn-custom btn-search">Generate New Plans</button>
     </form>
 </div>
-<br>
-<br>
-<br>
+
 <!-- Modal -->
 {% if not user.is_authenticated %}
 <div id="loginModal" class="modal" tabindex="-1" role="dialog">
@@ -59,15 +64,12 @@
 </div>
 {% endif %}
 
+
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script>
     function showLoginModal() {
-        var modal = document.getElementById('loginModal');
-        if (modal) {
-            var bootstrapModal = new bootstrap.Modal(modal);
-            bootstrapModal.show();
-        } else {
-            console.error('Modal element not found.');
-        }
+        var modal = new bootstrap.Modal(document.getElementById('loginModal'));
+        modal.show();
     }
 </script>
 
