@@ -23,7 +23,7 @@
         <p class="place-location">{{ place.location }}</p>
         <p class="place-description">{{ place.description }}</p>
     </div>
-            <br><a href="{% url 'book_place' place.id %}" class="btn-custom-one">Book</a>
+            <br><a href="{% url 'book_place' place.id %}" class="btn-custom-one" >Book</a>
             <br><a href="{% url 'view_comments' place.id %}" class="btn-custom-two">View Comments</a>
         </li>
         {% endfor %}
@@ -36,4 +36,6 @@
 <br>
 <br>
 <br>
+
+
 {% endblock %}

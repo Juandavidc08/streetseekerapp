@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Login Required{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="card shadow p-4 mb-5 bg-body rounded">
+        <div class="card-body">
+            <h1 class="searchtitle">Login Required</h1>
+            <p>You need to be logged in to book a place. Please <a href="{% url 'login' %}">log in</a> to continue.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

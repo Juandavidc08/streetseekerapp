@@ -4,14 +4,14 @@
 {% block title %}Add Comment{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Add Comment for {{ reservation.place.title }}</h1>
-    <form method="post">
+<div class="container delete-container">
+    <h1 class="searchtitle">Add Comment for {{ reservation.place.title }}</h1>
+    <form class="form" method="post">
         {% csrf_token %}
         <br>
         {{ form.as_p }}
         <br>
-        <button type="submit">Add Comment</button>
+        <button type="submit" class="btn-custom-one">Add Comment</button>
     </form>
 </div>
 {% endblock %}

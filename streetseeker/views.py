@@ -37,6 +37,13 @@ def book_place(request, place_id):
         form = ReservationForm(initial={'place': place})
     return render(request, 'book.html', {'form': form, 'place': place})
 
+def attempt_booking(request):
+    if request.user.is_authenticated:
+        return redirect('book_place', place_id=place_id)
+    else:
+        messages.info(request, 'You need to be logged in to book a place.')
+        return redirect('login')
+
 # View user's reservations, requires login
 @login_required
 def reservations(request):
