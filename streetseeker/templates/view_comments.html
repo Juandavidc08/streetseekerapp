@@ -1,35 +1,45 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Comments for {{ place.title }}{% endblock %}
-{% load static %} 
 
 {% block content %}
-<div class="container">
-    <h1>Comments for {{ place.title }}</h1>
+<div class="container common-container comment-container">
+    <div class="card">
+        <div class="card-body">
+                <img class="comment-image" src="{% static 'images/comment.jpg' %}" alt="{{ place.title }}">
+            <h1 class="searchtitle">Comments for {{ place.title }}</h1>
 
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
-    <ul>
-        {% for comment in comments %}
-        <li>
-            <strong>{{ comment.user.username }}</strong>: {{ comment.text }} <br>
-            Posted on: {{ comment.created_at }}
-            {% if comment.user == request.user %}
-                <form action="{% url 'delete_comment' comment.id %}" method="POST" style="display: inline;">
-                    {% csrf_token %}
-                    <button type="submit">Delete</button>
-                </form>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
             {% endif %}
-        </li>
-        {% empty %}
-        <li>No comments yet.</li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'search' %}">Back to Search</a>
+
+            <ul class="comments-list">
+                {% for comment in comments %}
+                <li class="comment-item">
+                    <div class="comment-header">
+                        <strong>{{ comment.user.username }}</strong> 
+                        <span class="comment-date">Posted on: {{ comment.created_at }}</span>
+                    </div>
+                    <p class="comment-text">{{ comment.text }}</p>
+                    {% if comment.user == request.user %}
+                        <form action="{% url 'delete_comment' comment.id %}" method="POST" class="delete-form">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-custom-three delete-button">Delete</button>
+                        </form>
+                    {% endif %}
+                </li>
+                {% empty %}
+                <li class="no-comments">No comments yet.</li>
+                {% endfor %}
+            </ul>
+
+            <a href="{% url 'search' %}" class="btn-custom-one back-button">Back to Search</a>
+        </div>
+    </div>
 </div>
 {% endblock %}

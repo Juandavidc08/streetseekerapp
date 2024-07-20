@@ -1,15 +1,20 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
+
 {% block title %}Delete Reservation{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Delete Reservation</h1>
-    <p>Are you sure you want to delete your reservation for {{ reservation.place.title }} on {{ reservation.date_of_visit }}?</p>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Delete</button>
-    </form>
+<div class="container common-container delete-container">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="searchtitle">Delete Reservation</h1>
+            <p class="confirmation-text">Are you sure you want to delete your reservation for <strong>{{ reservation.place.title }}</strong> on <strong>{{ reservation.date_of_visit }}</strong>?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn-custom-one">Delete</button>
+                <a href="{% url 'reservations' %}" class="btn-custom-one">Cancel</a>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
-∫

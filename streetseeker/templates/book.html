@@ -1,12 +1,26 @@
-{% extends "base.html" %} {% block title %} Home page {% endblock %}
-{% load static %} 
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Book Page{% endblock %}
+
 {% block content %}
-<div class="container">
-    <h1>Book {{ place.title }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Book</button>
-    </form>
+<div class="container common-container">
+    <div class="image-container-book">
+        <img src="{{ place.featured_image.url }}" alt="{{ place.title }}">
+        <p class="place-description">{{ place.description }}</p>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h1 class="searchtitle">Book {{ place.title }}</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn-custom-one">Book</button>
+            </form>
+        </div>
+    </div>
+    <div class="image-container-book">
+        <img class="book-image" src="{% static 'images/book.jpg' %}" alt="{{ place.title }}">
+    </div>
 </div>
-{% endblock %}∫
+{% endblock %}

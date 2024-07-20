@@ -1,21 +1,29 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
+
 {% block title %}My Reservations{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>My Reservations</h1>
-    <ul>
+<div class="container common-container">
+    <h1 class="searchtitle">My Reservations</h1>
+    <ul class="reservation-list">
         {% for reservation in reservations %}
-            <li>
-                {{ reservation.place.title }} on {{ reservation.date_of_visit }}
-                <div class="actions">
-                    <a href="{% url 'edit_reservation' reservation.id %}">Edit</a>
-                    <a href="{% url 'delete_reservation' reservation.id %}">Delete</a>
-                    <a href="{% url 'add_comment' reservation.id %}">Comment</a>
+            <li class="reservation-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="reservation-title">{{ reservation.place.title }}</h2>
+                        <p class="reservation-date">Visit Date: {{ reservation.date_of_visit }}</p>
+                        <p class="reservation-date">Visit Time: {{ reservation.time_of_visit }}</p>
+                        <div class="actions">
+                            <a href="{% url 'edit_reservation' reservation.id %}" class="btn-custom-one">Edit</a>
+                            <a href="{% url 'delete_reservation' reservation.id %}" class="btn-custom-one">Delete</a>
+                            <a href="{% url 'add_comment' reservation.id %}" class="btn-custom-one">Comment</a>
+                        </div>
+                    </div>
                 </div>
             </li>
         {% endfor %}
     </ul>
 </div>
 {% endblock %}
+

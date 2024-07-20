@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 {% load static %} 
+
 {% block title %}Edit Reservation{% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Edit Reservation</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Save</button>
-    </form>
+<div class="container edit-reservation-container">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="searchtitle">Edit Reservation</h1>
+            <form method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn-custom-one">Save</button>
+            </form>
+        </div>
+    </div>
 </div>
 {% endblock %}
-∫
