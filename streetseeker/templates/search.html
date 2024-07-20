@@ -23,7 +23,7 @@
         <p class="place-location">{{ place.location }}</p>
         <p class="place-description">{{ place.description }}</p>
     </div>
-            <br><a href="{% url 'book_place' place.id %}" class="btn-custom-one" >Book</a>
+            <br><a href="{% url 'book_place' place.id %}" class="btn-custom-one" onclick="showLoginModal()" >Book</a>
             <br><a href="{% url 'view_comments' place.id %}" class="btn-custom-two">View Comments</a>
         </li>
         {% endfor %}
@@ -36,6 +36,39 @@
 <br>
 <br>
 <br>
+<!-- Modal -->
+{% if not user.is_authenticated %}
+<div id="loginModal" class="modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Login Required</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>You need to be logged in to book a place. Please log in to continue.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 
+<script>
+    function showLoginModal() {
+        var modal = document.getElementById('loginModal');
+        if (modal) {
+            var bootstrapModal = new bootstrap.Modal(modal);
+            bootstrapModal.show();
+        } else {
+            console.error('Modal element not found.');
+        }
+    }
+</script>
 
 {% endblock %}
