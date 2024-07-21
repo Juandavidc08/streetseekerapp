@@ -36,7 +36,7 @@ def book_place(request, place_id):
         form = ReservationForm(initial={'place': place})
     return render(request, 'book.html', {'form': form, 'place': place})
 
-def attempt_booking(request, place_id):
+def attempt_booking(request):
     if request.user.is_authenticated:
         return redirect('book_place', place_id=place_id)
     else:
