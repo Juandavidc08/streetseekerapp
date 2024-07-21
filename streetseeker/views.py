@@ -23,7 +23,6 @@ def search(request):
 
 # Booking view, requires user to be logged in
 @login_required
-@login_required
 def book_place(request, place_id):
     place = get_object_or_404(Place, id=place_id)
     if request.method == 'POST':
@@ -37,7 +36,7 @@ def book_place(request, place_id):
         form = ReservationForm(initial={'place': place})
     return render(request, 'book.html', {'form': form, 'place': place})
 
-def attempt_booking(request):
+def attempt_booking(request, place_id):
     if request.user.is_authenticated:
         return redirect('book_place', place_id=place_id)
     else:

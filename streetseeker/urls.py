@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 from . import views
 
 
@@ -17,3 +19,4 @@ urlpatterns = [
     path('book/<int:place_id>/', views.attempt_booking, name='attempt_booking'),
     path('login-required/', views.login_required, name='login_required'),
 ]
++ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
