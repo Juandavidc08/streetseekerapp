@@ -1,3 +1,7 @@
+body {
+    background-color: #9fc0de;
+}
+
 /* Center the container and ensure it takes full height */
 .container {
     display: flex;
@@ -32,7 +36,7 @@
 }
 
 .btn-custom:hover {
-    background-color: #cc0000; /* Darker red on hover */
+    background-color: #378648; /* Darker red on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
     text-decoration: none;
     color: #ffffff;
@@ -49,7 +53,7 @@
     width: 100%; /* Ensure it takes the full width available */
     max-width: 300px; /* Same max width for all containers */
     height: 200px; /* Fixed height to ensure uniformity */
-    margin: 0; /* Center the container horizontally */
+    margin: 5px; /* Center the container horizontally */
     overflow: hidden; /* Hide any overflow from images */
 }
 
@@ -89,7 +93,7 @@
 /* Style for the headings */
 .searchtitle {
     text-align: center; /* Center the heading text */
-    margin-bottom: 20px; /* Space below the heading */
+    margin: 20px; /* Space below the heading */
     color: #f28500; /* Set text color */
     font-size: 2rem; /* Adjust font size for better readability */
     font-weight: bold; /* Make heading bold */
@@ -121,7 +125,7 @@
     border: 1px solid #000; /* Remove default border */
     border-radius: 20px;
     padding: 10px 10px; /* Adjust padding to control the size */
-    font-size: 15px; /* Adjust font size */
+    font-size: 20px; /* Adjust font size */
     text-align: center; /* Center text */
     display: inline-block; /* Align with text */
     transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
@@ -129,7 +133,7 @@
 }
 
 .btn-custom-one:hover {
-    background-color: #cc0000; /* Darker red on hover */
+    background-color: #378648; /* Darker red on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
     text-decoration: none;
     color: #ffffff;
@@ -141,7 +145,7 @@
     border: 1px solid #000; /* Remove default border */
     border-radius: 20px;
     padding: 10px 10px; /* Adjust padding to control the size */
-    font-size: 15px; /* Adjust font size */
+    font-size: 20px; /* Adjust font size */
     text-align: center; /* Center text */
     display: inline-block; /* Align with text */
     transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
@@ -158,6 +162,188 @@
 .btn-search {
     margin: 20px;
 }
+
+.btn-custom-three{
+    background-color: #cc0000; 
+    color: #ffffff; /* White text color */
+    border: 1px solid #000; /* Remove default border */
+    border-radius: 13px;
+    padding: 10px 10px; /* Adjust padding to control the size */
+    font-size: 15px; /* Adjust font size */
+    text-align: center; /* Center text */
+    display: inline-block; /* Align with text */
+    text-decoration: none;
+}
+
+.btn-custom-three:hover {
+    background-color: #378648; 
+    transform: scale(1.1); /* Slightly enlarge on hover */
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.btn-four {
+    margin: 10px;
+}
+/* Book.html */
+
+
+/* Card-like container for form and image */
+.common-container {
+    width: 100%;
+    max-width: 500px; /* Adjust max width as needed */
+    margin: auto;
+}
+
+/* Card-like container for form and image */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.image-container-book {
+    width: 100%;
+    max-width: 500px; /* Ensure it matches the max width of the container */
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image-container-book img {
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block;
+    border-radius: 8px;
+}
+
+/* Reservation.html */
+/* Reservation list styling */
+.reservation-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reservation-card {
+    margin-bottom: 20px;
+}
+
+/* Reservation title styling */
+.reservation-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Reservation date styling */
+.reservation-date {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Actions button styling */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.delete-container{
+    margin: 100px;
+}
+
+/* view_comments.html */
+/* Image styling within the card */
+.comment-image {
+    width: 100%; /* Make the image responsive */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 300px; /* Set a max-width to avoid excessive size */
+    border-radius: 8px; /* Rounded corners for the image */
+    margin: 5px; /* Space below the image */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add a subtle shadow */
+}
+
+.comment-container{
+    margin: 50px;
+}
+
+/* Comments list styling */
+.comments-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.comment-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.comment-date {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.comment-text {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+}
+
+.no-comments {
+    text-align: center;
+    color: #888;
+}
+
+/* contact_form.html */
+/* Form Group Styling */
+
+.form-container{
+    margin-top: 20px;
+}
+.form-group {
+    margin: 30px;
+}
+
+.form-group label {
+    display: block; /* Make label occupy full width */
+    margin-bottom: 5px; /* Space below the label */
+    font-size: 1rem;
+    color: #333; /* Darker text for better readability */
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 2px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; 
+}
+
+.form-group .invalid-feedback {
+    color: #cc0000; /* Red color for error messages */
+    font-size: 0.875rem; /* Slightly smaller font for error messages */
+    margin-top: 5px;
+}
+
+
 
 /* Make images fit well on different screen sizes */
 @media (max-width: 768px) {
