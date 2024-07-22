@@ -1,7 +1,7 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 https://streetseeker-e20ed2f178d7.herokuapp.com/
-
+Sarah, Roo 
 # This template has been deprecated
 
 Please use (and bookmark) this template instead: [CI Full Template](https://github.com/Code-Institute-Org/ci-full-template)
