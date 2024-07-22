@@ -10,6 +10,8 @@ ___
 
 Street Seeker is an app that will help users to find ideal plans, events, places to go around the city, this time as an preview of the full project I have in mind I did BARCELONA EDITION! Showing the most relevant places of the city and letting the user book or reserve through the app.
 
+This project has been quite challenging; I’ve had to restart from scratch three times due to various errors. Despite the difficulties, it has been a valuable learning experience, deepening my understanding of programming. While it’s a work in progress that will continue to evolve, for the moment I need to present it as it is for my shcool CODE INSTITUTE  at this stage. Hope you enjoy it as much as I do.
+
 It is a fullstack app site that allows users to check on diferent random places, create an account and comment and review their plans.
 
 Link to live site - [https://streetseeker-e20ed2f178d7.herokuapp.com/](https://streetseeker-e20ed2f178d7.herokuapp.com/)
