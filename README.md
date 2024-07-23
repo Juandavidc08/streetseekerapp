@@ -312,6 +312,8 @@ The only errors recieved here were where some lines of text exceeded the limit o
 
 This project is built upon the foundational framework provided by Code Institute's "I Think Therefore I Blog" walkthrough module. The initial blog template served as a base, which was extensively customized using Bootstrap and custom CSS to meet the specific requirements of this application.
 
+To [TripAdvisor](http://www.tripadvisor.com/) for being my support in the reasearch of nice places in Barcelona making easier to populate my database.
+
 Alot of credits to CODEMY for their incredible explanations on their tutorias of django in youtube , the best of all its free and I did learn so much many concepts I did have miss before [@Codemycom](https://www.youtube.com/watch?v=cb1Pr8-m5YE&t=36)
 
 Also from youtube to [@TechWithTim] one of my favorites youtubers of all, with these videos he simplified what sometimes is give to you as if it was impossible (https://www.youtube.com/watch?v=nGIg40xs9e4&t=799s)
