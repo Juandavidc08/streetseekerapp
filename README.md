@@ -113,6 +113,20 @@ The database plan for the "Street Seeker" app is straightforward, capturing esse
 - Add profile page for users to add profile image and edit personal details
 - Add an option for users to upload photos into the comments
 
+# Screen display
+
+![home screen](documentation/images/streetseekerscreen.png)
+![search screen](documentation/images/searchscreen.png)
+![book screen](documentation/images/bookscreen.png)
+![my plans](documentation/images/myreservations.png)
+![reviews](documentation/images/reviews.png)
+![login](documentation/images/login.png)
+![contact us ](documentation/images/contactus.png)
+![comments](documentation/images/comments.png)
+![alert message](documentation/images/alertmessage.png)
+![registration](documentation/images/registration.png)
+
+
 # Technologies Used
 
 
@@ -206,8 +220,6 @@ This approach ensured a robust and user-friendly application, capable of providi
 - Updated the database configuration in the Django settings to match the Heroku PostgreSQL database credentials.
 - Verified the database connection using Heroku’s CLI tools and checked for any configuration discrepancies.
 - Re-deployed the application to Heroku after making the necessary adjustments to ensure stable connectivity.
-
-## Lighthouse
 
 ## Validation Testing
 
